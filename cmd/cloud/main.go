@@ -41,7 +41,7 @@ func DrawEllipses(canvas *svg.SVG, count int) {
 			utils.TruncatedNormal(0, 40, 80, 150),
 			utils.TruncatedNormal(0, 40, 80, 150)
 
-		color, alpha, stroke := 0, utils.RandRangeFloat(0.4, 1), utils.RandRange(2, 4)
+		color, alpha, stroke := 0, utils.RandRange(0.4, 1.0), utils.RandRange(2, 4)
 		canvas.Ellipse(w/2+offsetX, h/2+offsetY, ew, eh, fmt.Sprintf("fill:none; stroke:#%02x%02x%02x; stroke-width:%d; stroke-opacity:%.2f;", color, color, color, stroke, alpha))
 	}
 }
@@ -54,7 +54,7 @@ func DrawLines(canvas *svg.SVG, count int, boundsOffset int) {
 			utils.TruncatedNormal(float64(h/2), float64(h/2), float64(boundsOffset), float64(h-boundsOffset)),
 			utils.TruncatedNormal(float64(w/2), float64(w/2), float64(boundsOffset), float64(w-boundsOffset)),
 			utils.TruncatedNormal(float64(h/2), float64(h/2), float64(boundsOffset), float64(h-boundsOffset)),
-			fmt.Sprintf("stroke:#%02x%02x%02x; stroke-width:%d; stroke-opacity: %.2f", c, c, c, utils.RandRange(1, 2), utils.RandRangeFloat(0.2, 0.5)),
+			fmt.Sprintf("stroke:#%02x%02x%02x; stroke-width:%d; stroke-opacity: %.2f", c, c, c, utils.RandRange(1, 2), utils.RandRange(0.2, 0.5)),
 		)
 	}
 }

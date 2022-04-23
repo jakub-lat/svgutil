@@ -1,13 +1,13 @@
 package utils
 
-import "math/rand"
+import (
+	"golang.org/x/exp/constraints"
+	"math/rand"
+)
 
-func RandRange(min, max int) int {
-	return rand.Intn(max-min) + min
-}
-
-func RandRangeFloat(min, max float64) float64 {
-	return rand.Float64()*(max-min) + min
+func RandRange[T constraints.Integer | constraints.Float](min, max T) T {
+	minf, maxf := float64(min), float64(max)
+	return T(rand.Float64()*(maxf-minf) + minf)
 }
 
 func TruncatedNormal(mean, stdDev, low, high float64) int {

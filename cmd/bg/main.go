@@ -46,7 +46,7 @@ func DrawLines(canvas *svg.SVG, count int, color string) {
 			utils.RandRange(-outside, h+outside),
 			utils.RandRange(-outside, w+outside),
 			utils.RandRange(-outside, h+outside),
-			fmt.Sprintf("stroke:%v; stroke-width:%d; stroke-opacity: %.2f", color, utils.RandRange(3, 5), utils.RandRangeFloat(0.1, 0.4)),
+			fmt.Sprintf("stroke:%v; stroke-width:%d; stroke-opacity: %.2f", color, utils.RandRange(3, 5), utils.RandRange(0.1, 0.4)),
 		)
 	}
 }
@@ -111,7 +111,7 @@ func DrawStains(canvas *svg.SVG, count int) error {
 			utils.RandRange(boundsOffset, w-boundsOffset),
 			utils.RandRange(boundsOffset, h-boundsOffset),
 			fmt.Sprintf("#stain%d", stainId),
-			fmt.Sprintf("opacity:%.2f", utils.RandRangeFloat(0.1, 0.5)),
+			fmt.Sprintf("opacity:%.2f", utils.RandRange(0.1, 0.5)),
 		)
 	}
 
